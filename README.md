@@ -6,7 +6,8 @@ Create PDF file from html
 
 Use the package manager [npm](https://www.npmjs.com/) to install the dependencies.
 
-```npm install
+```
+npm install
 
 ```
 
