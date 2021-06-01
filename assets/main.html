@@ -58,6 +58,13 @@
       .compile-button:hover {
         background-color: #202020;
       }
+      .preview {
+        color: #eeeeee;
+        font-size: 3em;
+        font-weight: lighter;
+        margin-top: 0;
+        margin-bottom: 10px;
+      }
     </style>
     <script type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -87,7 +94,8 @@
       </div>
 
       <div class="column">
-        <h2>Preview here</h2>
+        <h2 class="preview">Preview</h2>
+        <iframe id="pdfpreview" src="/output.pdf" height="85%" width="100%" frameborder="0"></iframe>
       </div>
     </div>
   </body>
@@ -132,8 +140,10 @@
             heading: 'Success',
             text: 'Code compiled',
             icon: 'success',
-            hideAfter : 1200
+            hideAfter : 1200,
+            position:"bottom-center"
           })
+          document.getElementById('pdfpreview').contentWindow.location.reload(true);
         },
         error: function (err) {
           // Error
@@ -142,7 +152,8 @@
             heading: 'Error',
             text: 'PDF generation failed',
             icon: 'error',
-            hideAfter : 1200
+            hideAfter : 1200,
+            position:"bottom-center"
           })
           console.log(err)
         }
@@ -152,6 +163,7 @@
         text: "Processing! Please wait..",
         textAlign: "center",
         hideAfter : 1200,
+        position:"bottom-center"
       });
 
 

@@ -14,17 +14,24 @@ npm install
 
 To create a simple tool to create and preview PDF document from html code
 
-## Dependencies
+## Dependencies / Features
 
 - [Puppeteer](https://github.com/puppeteer/puppeteer)
 - [Express](https://github.com/expressjs/express)
+- [Nodemon](https://github.com/remy/nodemon)
+- [Ace (Ajax.org Cloud9 Editor)](https://github.com/ajaxorg/ace)
+
+
+## Screenshot
+
+![Screenshot](assets/screenshot.png)
 
 ## Roadmap
 
 - [x] Create PDF file from input html
-- [ ] UI to input html
-- [ ] UI to Preview Html
-- [ ] UI to Preview PDF
+- [x] UI to input html
+- [x] UI to Preview PDF
+
 
 ## License
 
