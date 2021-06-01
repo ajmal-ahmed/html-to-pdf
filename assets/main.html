@@ -115,10 +115,46 @@
     editor.session.setMode("ace/mode/html");
 
     function submitCode() {
+      var content=editor.getValue()
+      console.log("content",content)
+
+      // Fire off the request to /form.php
+      request = $.ajax({
+        url: "/generate-pdf",
+        type: "post",
+        contentType:"application/json; charset=utf-8",
+        dataType:"json",
+        data: JSON.stringify({"html":content}),
+        success: function (result) {
+          // Done
+          $.toast().reset('all');$.toast().reset('all');
+          $.toast({
+            heading: 'Success',
+            text: 'Code compiled',
+            icon: 'success',
+            hideAfter : 1200
+          })
+        },
+        error: function (err) {
+          // Error
+          $.toast().reset('all');
+          $.toast({
+            heading: 'Error',
+            text: 'PDF generation failed',
+            icon: 'error',
+            hideAfter : 1200
+          })
+          console.log(err)
+        }
+      })
+
       $.toast({
         text: "Processing! Please wait..",
         textAlign: "center",
+        hideAfter : 1200,
       });
+
+
     }
   </script>
 </html>

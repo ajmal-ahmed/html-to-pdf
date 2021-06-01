@@ -18,7 +18,7 @@ app.post("/generate-pdf", async (req, res) => {
     return;
   }
   await pdfLib.generatePdf(inputHtml);
-  res.send("PDF generated");
+  res.json({message:"PDF generated"}).status(201);
 });
 
 app.listen(port, () => {
